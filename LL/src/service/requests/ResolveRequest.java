@@ -15,9 +15,10 @@ public class ResolveRequest {
     }
 
     public void run(){
-         //....
-
+        EvalExpression EvalExpr = new EvalExpression(this.request);
+        EvalExpr.run();
         setConcluted(true);
+
     }
 
     // Getters & Setters 
@@ -36,26 +37,32 @@ public class ResolveRequest {
     public void setRequest(Request request) {
         this.request = request;
     }
-
 }
 
 
+
 class EvalExpression {
-    public static void main(String[] args) {
+    public Request request;
+
+    public EvalExpression(Request request) {
+        this.request = request;
+    }
+    
+    public void run(){
         // Cria uma instância do ScriptEngineManager
         ScriptEngineManager manager = new ScriptEngineManager();
         // Obtém uma instância do ScriptEngine para JavaScript
         ScriptEngine engine = manager.getEngineByName("JavaScript");
 
-        String expression = "5 * 2";
         
         try {
             // Avalia a expressão
-            Object result = engine.eval(expression);
+            Object result = engine.eval(request.getRequestSolicitation());
             // Imprime o resultado
             System.out.println("Resultado: " + result);
         } catch (ScriptException e) {
             System.out.println(e);
+
         }
     }
 }
