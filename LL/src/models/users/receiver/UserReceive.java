@@ -31,7 +31,7 @@ public class UserReceive extends PatternUserProfile{
         resolveReq.run();
         
         appendToRequestConcludedList(request);
-        getRequests().remove(getRequests().indexOf(request));
+        // getRequests().remove(getRequests().indexOf(request));
     }
     
     public void receiveRequest(Request request){
@@ -39,8 +39,10 @@ public class UserReceive extends PatternUserProfile{
     }
     
     public void operateRequest(){
-        for (Request req : this.requests){
-            __operate(req);
+        if (!this.requests.isEmpty()){
+            for (Request req : this.requests){
+                __operate(req);
+            }
         }
     }
 

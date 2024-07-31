@@ -15,12 +15,18 @@ public class MainGuidance {
         request.setRequestName("Multiplicador");
         request.setRequestDataSent("30/07/2024");
         request.setRequestDataUntilLimit("02/08/2024");
-        request.setRequestSolicitation("5*2");
+        request.setRequestSolicitation(5);
 
         userRequester.sendRequest(userReceiver, request);
+        userReceiver.operateRequest();
 
+        System.out.println(userReceiver.getRequests());
+        for (Request req : userReceiver.getRequestConcluded()){
+            System.out.println(req.getRequestName());
+            System.out.println(req.getRequestSolicitation());
+            System.out.println(req.getRequestResult());
+        }
         System.out.println(userReceiver.getRequestConcluded());
-        // userReceiver.operateRequest();
 
     }
 }
