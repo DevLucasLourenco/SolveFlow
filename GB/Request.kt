@@ -1,11 +1,11 @@
-class PatternUserRequest : User {
+abstract class PatternUserProfile {
+
+
+    val name
+    val cpf
+    val id
+
     
-    fun sendRequest(User user){
         
     }
-    
-    fun receiveConclusion(){ // resolve request - fazer essa classe dps     
-    
-    }
 
-} 

@@ -1,18 +1,25 @@
-fun main(){
+class PatternsUserRequest{
 
-val name
-val cpf    
-val id
-
-
-
+    val(PatternUserProfile)
 }
 
 
-abstract class User{
 
-    abstract val name: String
-    abstract val cpf: String
-    abstract val id: String
 
+// aq pra baixo rs lindo gostoso
+class UserRequest{
+
+    val name: String
+    val cpf: String
+    val id: int
+}
+
+class UserReceive{
+    val name: String
+    val cpf: String
+    val id: int
+
+    fun receiveRequest(){
+        
+    }
 }

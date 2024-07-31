@@ -13,6 +13,12 @@ public class UserReceive extends PatternUserProfile{
     private List<Request> requests = new ArrayList<>();
     private List<Request> requestConcluded = new ArrayList<>();
 
+    public UserReceive(String name, String cpf, int id){
+        setName(name);
+        setCpf(cpf);
+        setID(id);
+    }
+
     private void appendToRequestList(Request request){
         getRequests().add(request);
     }

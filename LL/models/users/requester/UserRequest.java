@@ -8,17 +8,15 @@ import service.requests.ResolveRequest;
 
 public class UserRequest extends PatternUserProfile{
 
+    public UserRequest(String name, String cpf, int id){
+        setName(name);
+        setCpf(cpf);
+        setID(id);
+    }
 
-    public void sendRequest(UserReceive user){
-        Request req = new Request();
-        req.setRequestName(" Teste");
-        req.setRequestDataSent("");
-        req.setRequestDataUntilLimit("");
-        req.setRequestSolicitation("");
-
+    public void sendRequest(UserReceive user, Request req){
         user.receiveRequest(req);
     }
-    
 
     public void receiveConclusion(ResolveRequest requestConcluded){
         if (requestConcluded.isConcluded()){
