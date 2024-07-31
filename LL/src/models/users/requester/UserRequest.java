@@ -1,7 +1,7 @@
 package models.users.requester;
 
-import models.users.receiver.UserReceive;
 import models.users.patterns.PatternUserProfile;
+import models.users.receiver.UserReceive;
 import service.requests.Request;
 import service.requests.ResolveRequest;
 
@@ -20,7 +20,7 @@ public class UserRequest extends PatternUserProfile{
 
     public void receiveConclusion(ResolveRequest requestConcluded){
         if (requestConcluded.isConcluded()){
-            
+            //...
         }
     }
 

@@ -6,6 +6,7 @@ public class Request {
     private String requestDataUntilLimit;
     private String requestSolicitation;
     
+    
 
     // Getters & Setters 
     public String getRequestName() {
