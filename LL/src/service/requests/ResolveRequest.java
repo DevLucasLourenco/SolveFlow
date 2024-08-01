@@ -3,7 +3,6 @@ package service.requests;
 
 public class ResolveRequest {
     private Request request;
-    private boolean concluded = false;
 
 
     public ResolveRequest(Request request){
@@ -12,17 +11,10 @@ public class ResolveRequest {
 
     public void run(){
         request.setRequestResult(request.getRequestSolicitation()*2);
-        setConcluted(true);
+        request.setRequestStateOK(true);
     }
 
     // Getters & Setters 
-    public boolean isConcluded() {
-        return concluded;
-    }
-
-    public void setConcluted(boolean concluded) {
-        this.concluded = concluded;
-    }
 
     public Request getRequest() {
         return request;

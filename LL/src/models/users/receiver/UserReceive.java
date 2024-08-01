@@ -1,9 +1,10 @@
 package models.users.receiver;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
+
 import models.users.patterns.PatternUserProfile;
+import models.users.requester.UserRequest;
 import service.requests.Request;
 import service.requests.ResolveRequest;
 
@@ -26,27 +27,6 @@ public class UserReceive extends PatternUserProfile{
     private void appendToRequestConcludedList(Request request){
         getRequestConcluded().add(request);
     }
-
-    private void __operate(Request request){
-        ResolveRequest resolveReq = new ResolveRequest(request);
-        resolveReq.run();
-        
-        appendToRequestConcludedList(request);
-        __removeFromRequests(request);
-        getRequests().remove(request);
-    }
-
-    private void __removeFromRequests(Request request){
-        Iterator<Request> iterator = requests.iterator();
-        while (iterator.hasNext()){
-            Request element = iterator.next();
-            if (element.equals(request)){
-                System.out.println("vtnc");
-                iterator.remove();
-            }
-        }
-        
-    }
     
     public void receiveRequest(Request request){
         appendToRequestList(request);
@@ -55,16 +35,30 @@ public class UserReceive extends PatternUserProfile{
     public void operateRequest(){
         if (!this.requests.isEmpty()){
             for (Request req : this.requests){
-                __operate(req);
+                ResolveRequest resolveReq = new ResolveRequest(req);
+                resolveReq.run();
+
+                appendToRequestConcludedList(req);
             }
         }
     }
 
+    public void clearRequestsLists() {
+        getRequestConcluded().clear();
+        getRequests().clear();
+    }
+
+    public void sendConclusions(UserRequest user) {
+        for (Request req : getRequestConcluded()){
+            user.receiveConclusion(req);
+        }
+    }
 
     // Getters & Setters
     public List<Request> getRequests() {
         return this.requests;
     }
+
     public List<Request> getRequestConcluded() {
         return this.requestConcluded;
     }

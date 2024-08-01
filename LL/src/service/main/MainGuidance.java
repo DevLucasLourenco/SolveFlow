@@ -21,11 +21,11 @@ public class MainGuidance {
         userReceiver.operateRequest();
 
         System.out.println(userReceiver.getRequests());
+        
         for (Request req : userReceiver.getRequestConcluded()){
-            System.out.println(req.getRequestName());
-            System.out.println(req.getRequestSolicitation());
-            System.out.println(req.getRequestResult());
+            req.showInfosOfRequest();
         }
+
         System.out.println(userReceiver.getRequestConcluded());
 
     }

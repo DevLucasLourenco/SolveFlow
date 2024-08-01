@@ -1,14 +1,24 @@
 package service.requests;
 
 public class Request {
+    private boolean requestStateOK=false;
     private String requestName;
     private String requestDataSent;
     private String requestDataUntilLimit;
     private int requestSolicitation;
     private int requestResult;
-    
-    
 
+
+    public void showInfosOfRequest(){
+        System.out.println("Request State OK: " + requestStateOK);
+        System.out.println("Request Name: " + requestName);
+        System.out.println("Request Data Sent: " + requestDataSent);
+        System.out.println("Request Data Until Limit: " + requestDataUntilLimit);
+        System.out.println("Request Solicitation: " + requestSolicitation);
+        System.out.println("Request Result: " + requestResult);
+    }
+
+    
     // Getters & Setters 
     public String getRequestName() {
         return requestName;
@@ -39,5 +49,11 @@ public class Request {
     }
     public void setRequestResult(int requestResult) {
         this.requestResult = requestResult;
+    }
+    public boolean isRequestStateOK() {
+        return requestStateOK;
+    }
+    public void setRequestStateOK(boolean requestState) {
+        this.requestStateOK = requestState;
     }
 }

@@ -1,5 +1,8 @@
 package models.users.requester;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import models.users.patterns.PatternUserProfile;
 import models.users.receiver.UserReceive;
 import service.requests.Request;
@@ -7,6 +10,7 @@ import service.requests.ResolveRequest;
 
 
 public class UserRequest extends PatternUserProfile{
+    private List<Request> AllConcludedRequests = new ArrayList<>();
 
     public UserRequest(String name, String cpf, int id){
         setName(name);
@@ -18,10 +22,9 @@ public class UserRequest extends PatternUserProfile{
         user.receiveRequest(req);
     }
 
-    public void receiveConclusion(ResolveRequest requestConcluded){
-        if (requestConcluded.isConcluded()){
-            //...
+    public void receiveConclusion(Request requestConcluded){
+        if (requestConcluded.isRequestStateOK()){
+            AllConcludedRequests.add(requestConcluded);
         }
     }
-
 }
