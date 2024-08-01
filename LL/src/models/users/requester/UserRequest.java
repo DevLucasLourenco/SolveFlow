@@ -6,7 +6,6 @@ import java.util.List;
 import models.users.patterns.PatternUserProfile;
 import models.users.receiver.UserReceive;
 import service.requests.Request;
-import service.requests.ResolveRequest;
 
 
 public class UserRequest extends PatternUserProfile{
