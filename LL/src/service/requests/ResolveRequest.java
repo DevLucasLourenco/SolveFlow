@@ -10,12 +10,13 @@ public class ResolveRequest {
     }
 
     public void run(){
-        request.setRequestResult(request.getRequestSolicitation()*2);
-        request.setRequestStateOK(true);
+        if (!request.isRequestStateOK()){
+            request.setRequestResult(request.getRequestSolicitation() * 2);
+            request.setRequestStateOK(true);
+        }
     }
 
     // Getters & Setters 
-
     public Request getRequest() {
         return request;
     }

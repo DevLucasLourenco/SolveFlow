@@ -18,8 +18,15 @@ public class MainGuidance {
         request.setRequestSolicitation(5);
 
         userRequester.sendRequest(userReceiver, request);
+        
+        for (Request req : userReceiver.getRequests()){
+            req.showInfosOfRequest();
+        }
+        System.out.println("\n");
+        
+        // -- done
         userReceiver.operateRequest();
-
+        
         System.out.println(userReceiver.getRequests());
         
         for (Request req : userReceiver.getRequestConcluded()){
@@ -27,6 +34,6 @@ public class MainGuidance {
         }
 
         System.out.println(userReceiver.getRequestConcluded());
-
+        // -- 
     }
 }
