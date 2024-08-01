@@ -10,12 +10,15 @@ public class Request {
 
 
     public void showInfosOfRequest(){
-        System.out.println("Request State OK: " + requestStateOK);
+        System.out.println("--------------------");
         System.out.println("Request Name: " + requestName);
+        System.out.println("Request Complete: " + requestStateOK);
         System.out.println("Request Data Sent: " + requestDataSent);
         System.out.println("Request Data Until Limit: " + requestDataUntilLimit);
         System.out.println("Request Solicitation: " + requestSolicitation);
         System.out.println("Request Result: " + requestResult);
+        System.out.println("--------------------");
+        System.out.println("\n");
     }
 
     

@@ -19,21 +19,20 @@ public class MainGuidance {
 
         userRequester.sendRequest(userReceiver, request);
         
+        // first print out
+        System.out.println(userReceiver.getRequests());
         for (Request req : userReceiver.getRequests()){
             req.showInfosOfRequest();
         }
-        System.out.println("\n");
         
-        // -- done
+        // operating
         userReceiver.operateRequest();
         
-        System.out.println(userReceiver.getRequests());
         
+        // second print out
+        System.out.println(userReceiver.getRequestConcluded());
         for (Request req : userReceiver.getRequestConcluded()){
             req.showInfosOfRequest();
         }
-
-        System.out.println(userReceiver.getRequestConcluded());
-        // -- 
     }
 }

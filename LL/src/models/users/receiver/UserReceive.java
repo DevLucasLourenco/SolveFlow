@@ -2,7 +2,6 @@ package models.users.receiver;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import models.users.patterns.PatternUserProfile;
 import models.users.requester.UserRequest;
 import service.requests.Request;
@@ -11,8 +10,8 @@ import service.requests.ResolveRequest;
 
 public class UserReceive extends PatternUserProfile{
 
-    private List<Request> requests = new ArrayList<>();
-    private List<Request> requestConcluded = new ArrayList<>();
+    private final List<Request> requests = new ArrayList<>();
+    private final List<Request> requestConcluded = new ArrayList<>();
 
     public UserReceive(String name, String cpf, int id){
         setName(name);
@@ -52,6 +51,7 @@ public class UserReceive extends PatternUserProfile{
         for (Request req : getRequestConcluded()){
             user.receiveConclusion(req);
         }
+        clearRequestsLists();
     }
 
     // Getters & Setters
