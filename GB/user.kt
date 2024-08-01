@@ -1,25 +1,32 @@
-class PatternsUserRequest{
+abstract class PatternsUserProfile{
 
-    val(PatternUserProfile)
+    val name
+    val cpf
+    val id
 }
 
+// 
+class UserRequest: PatternsUserProfile{
 
+ fun main(){
+    println("Type your Name")
+    val name = readLine() ?: 
 
+    println("Type your CPF")
+    val cpf = 
 
-// aq pra baixo rs lindo gostoso
-class UserRequest{
-
-    val name: String
-    val cpf: String
-    val id: int
+    println("Type your ID")
+    val id =  
+ }   
 }
 
-class UserReceive{
-    val name: String
-    val cpf: String
-    val id: int
+class UserReceive: PatternsUserProfile{
+   
+ fun main(){
+    println("Nome: $nome") 
+    println("Cpf: $cpf") 
+    println("id: $id") 
 
-    fun receiveRequest(){
-        
-    }
+ }
 }
+

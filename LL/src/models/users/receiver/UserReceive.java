@@ -1,6 +1,7 @@
 package models.users.receiver;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import models.users.patterns.PatternUserProfile;
 import service.requests.Request;
@@ -9,8 +10,8 @@ import service.requests.ResolveRequest;
 
 public class UserReceive extends PatternUserProfile{
 
-    private final List<Request> requests = new ArrayList<>();
-    private final List<Request> requestConcluded = new ArrayList<>();
+    private List<Request> requests = new ArrayList<>();
+    private List<Request> requestConcluded = new ArrayList<>();
 
     public UserReceive(String name, String cpf, int id){
         setName(name);
@@ -31,7 +32,20 @@ public class UserReceive extends PatternUserProfile{
         resolveReq.run();
         
         appendToRequestConcludedList(request);
-        // getRequests().remove(getRequests().indexOf(request));
+        __removeFromRequests(request);
+        getRequests().remove(request);
+    }
+
+    private void __removeFromRequests(Request request){
+        Iterator<Request> iterator = requests.iterator();
+        while (iterator.hasNext()){
+            Request element = iterator.next();
+            if (element.equals(request)){
+                System.out.println("vtnc");
+                iterator.remove();
+            }
+        }
+        
     }
     
     public void receiveRequest(Request request){
@@ -51,7 +65,6 @@ public class UserReceive extends PatternUserProfile{
     public List<Request> getRequests() {
         return this.requests;
     }
-
     public List<Request> getRequestConcluded() {
         return this.requestConcluded;
     }
