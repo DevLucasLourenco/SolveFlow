@@ -8,11 +8,11 @@ import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
 
-public class LogManager {
-    private static final Logger LOGGER = Logger.getLogger(LogManager.class.getName());
+public class LogFlow {
+    private static final Logger LOGGER = Logger.getLogger(LogFlow.class.getName());
 
 
-    public LogManager(){
+    public LogFlow(){
         prepareConsoleHandler();
         prepareFileHandler();
         configureLogLevel();
@@ -39,5 +39,7 @@ public class LogManager {
     private void configureLogLevel(){
         LOGGER.setLevel(Level.ALL);
     }
+
+    // public void 
 
 }

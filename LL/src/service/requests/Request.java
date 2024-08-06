@@ -1,7 +1,6 @@
 package service.requests;
 
 public class Request {
-    private static int ID;
     private boolean requestStateOK=false;
     private String requestName;
     private String requestDataSent;
@@ -9,9 +8,7 @@ public class Request {
     private int requestSolicitation;
     private int requestResult;
 
-    public Request(){
-        increaseID();
-    }
+
 
 
     public void showInfosOfRequest(){
@@ -24,10 +21,6 @@ public class Request {
         System.out.println("Request Result: " + requestResult);
         System.out.println("--------------------");
         System.out.println("\n");
-    }
-
-    private void increaseID(){
-        setID(getID()+1);
     }
 
     // Getters & Setters 
@@ -66,11 +59,5 @@ public class Request {
     }
     public void setRequestStateOK(boolean requestState) {
         this.requestStateOK = requestState;
-    }
-    public static int getID() {
-        return ID;
-    }
-    public static void setID(int iD) {
-        ID = iD;
     }
 }

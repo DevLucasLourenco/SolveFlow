@@ -25,8 +25,8 @@ public class UserRequest extends PatternUserProfile{
         if (requestConcluded.isRequestStateOK()){
             getAllConcludedRequests().add(requestConcluded);
         }
-    
     }
+    
     public List<Request> getAllConcludedRequests() {
         return AllConcludedRequests;
     }
