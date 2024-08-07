@@ -9,8 +9,6 @@ public class Request {
     private int requestResult;
 
 
-
-
     public void showInfosOfRequest(){
         System.out.println("--------------------");
         System.out.println("Request Name: " + requestName);
